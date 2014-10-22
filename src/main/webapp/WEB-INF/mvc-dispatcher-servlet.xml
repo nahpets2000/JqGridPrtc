@@ -15,4 +15,6 @@
         <property name="suffix" value=".jsp"/>
     </bean>
     <mvc:annotation-driven />
+    <mvc:view-controller path="/myfirstGrid/get" view-name="myfirstGrid" />
+    <mvc:view-controller path="/customformatter/get" view-name="customFormatter" />
 </beans>
