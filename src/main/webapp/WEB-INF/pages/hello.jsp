@@ -4,8 +4,10 @@
     <title>Main</title>
 </head>
 <body>
-	<h1></h1>
-    <a href="/myfirstGrid/get">myfirstGrid</a>
-    <a href="/customformatter/get">customformatter</a>
+	<h1>jqGrid practice</h1>
+    <ul>
+        <li><a href="/myfirstGrid/get">myfirstGrid</a></li>
+        <li><a href="/customformatter/get">customformatter</a></li>
+    </ul>
 </body>
 </html>

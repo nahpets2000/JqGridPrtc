@@ -34,6 +34,7 @@
                 "rows": [
                     {
                         "invid" : "1",
+                        "invdateStrange" : "20141021",
                         "invdate" : "20141021",
                         "amount" : "20000",
                         "tax" : "2000",
@@ -45,9 +46,11 @@
                 //url: "example.php",
                 datatype : "jsonstring", //datatype: "xml", local json data 사용
                 //mtype: "GET",
-                colNames: ["Inv No", "Date", "Amount", "Tax", "Notes"],
+                colNames: ["Inv No", "Date Strange Display", "Date", "Amount", "Tax", "Notes"],
                 colModel: [
                     { name: "invid", width: 55},
+                    { name: "invdateStrange", width: 90, formatter: "date"},
+                    //{ name: "invdateStrange", width: 90, formatter: "date", formatoptions:{srcformat:"Y-m-d",newformat:"d-M-Y"}},
                     { name: "invdate", width: 90, formatter: dateFormatter
                     },
                     { name: "amount", width: 80, align: "right", formatter:'currency', formatoptions:{decimalSeparator:"", thousandsSeparator: ",", decimalPlaces: 0}},
