@@ -23,7 +23,7 @@
 
     <script type="text/javascript" src="/resources/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="/resources/js/jquery.jqGrid.min.js"></script>
-    <script type="text/javascript" src="/resources/js/i18n/grid.locale-en.js"></script>
+    <script type="text/javascript" src="/resources/js/i18n/grid.locale-kr.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             'use strict';

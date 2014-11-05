@@ -17,4 +17,7 @@
     <mvc:annotation-driven />
     <mvc:view-controller path="/myfirstGrid/get" view-name="myfirstGrid" />
     <mvc:view-controller path="/customformatter/get" view-name="customFormatter" />
+    <mvc:view-controller path="/navigator/get" view-name="navigator" />
+    <mvc:view-controller path="/customButton/get" view-name="customButtons" />
+    <mvc:view-controller path="/importingExporting/get" view-name="importingExporting" />
 </beans>

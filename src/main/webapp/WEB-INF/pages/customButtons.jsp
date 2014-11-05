@@ -1,15 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
   User: lko
-  Date: 2014-10-22
-  Time: 오후 5:51
+  Date: 2014-11-05
+  Time: 오후 2:12
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My First Grid</title>
+    <title>navigator</title>
     <link rel="stylesheet" type="text/css" media="screen" href="/resources/css/ui.jqgrid.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="/resources/css/ui-lightness/jquery-ui.css"/>
 
@@ -46,15 +46,13 @@
                 //url: "example.php",
                 datatype : "jsonstring", //datatype: "xml", local json data 사용
                 //mtype: "GET",
-                colNames: ["Inv No", "Date Strange Display", "Date", "Amount", "Tax", "Notes"],
+                colNames: ["Inv No", "Date", "Amount", "Tax", "Notes"],
                 colModel: [
                     { name: "invid", width: 55},
-                    { name: "invdateStrange", width: 90, formatter: "date"},
-                    //{ name: "invdateStrange", width: 90, formatter: "date", formatoptions:{srcformat:"Y-m-d",newformat:"d-M-Y"}},
                     { name: "invdate", width: 90, formatter: dateFormatter
                     },
                     { name: "amount", width: 80, align: "right", formatter:'currency', formatoptions:{decimalSeparator:"", thousandsSeparator: ",", decimalPlaces: 0}},
-                    { name: "tax", width: 80, align:"right"},
+                    { name: "tax", width: 80, align:"right", formatter:'currency', formatoptions:{decimalSeparator:"", thousandsSeparator: ",", decimalPlaces: 0}},
                     { name: "note", width: 150, sortable: false}
                 ],
                 pager: "#pager",
@@ -65,14 +63,38 @@
                 viewrecords: true,
                 girdview: true,
                 //autoencode: true,
-                caption:"Custom Formatter",
+                caption:"navigator grid",
                 datastr: data,
                 height: "auto"
-            });
+            }).navGrid("#pager",{view:false, add: false, edit : false, del:false, search:false, refresh:false},
+            //}).navGrid("#pager",{view:true, del:false},
+                    {}, // use default settings for edit
+                    {}, // use default settings for add
+                    {},  // delete instead that del:false we need this
+                    {multipleSearch:true}, // enable the advanced searching
+                    {closeOnEscape:true} /* allow the view dialog to be closed when user press ESC key*/
+            ).navButtonAdd('#pager',{
+                caption:"Add",
+                buttonicon:"ui-icon-add",
+                onClickButton: function(){
+                    alert("Adding Row");
+                },
+                position:"last"
+            })
+            .navButtonAdd('#pager',{
+                caption:"Del",
+                buttonicon:"ui-icon-del",
+                onClickButton: function(){
+                    alert("Deleting Row");
+                },
+                position:"last"
+            }).navSeparatorAdd("#pager", {sepclass : "ui-separator",sepcontent: ''});
+            ;
+
+            function dateFormatter(cellvalue, options, rowObject) {
+                return cellvalue.substr(0, 4) + "-" + cellvalue.substr(4, 2) + "-" + cellvalue.substr(6, 2);
+            }
         });
-        function dateFormatter(cellvalue, options, rowObject) {
-            return cellvalue.substr(0, 4) + "-" + cellvalue.substr(4, 2) + "-" + cellvalue.substr(6, 2);
-        }
     </script>
 </head>
 <body>
@@ -81,7 +103,7 @@
     <tr>
         <td></td>
     </tr>
-    <div id="pager"></div>
 </table>
+<div id="pager"></div>
 </body>
 </html>
