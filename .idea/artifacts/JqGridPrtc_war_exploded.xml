@@ -18,6 +18,12 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:3.2.0.RELEASE" />
           <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:3.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi:3.11-beta2" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml:3.11-beta2" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml-schemas:3.11-beta2" />
+          <element id="library" level="project" name="Maven: org.apache.xmlbeans:xmlbeans:2.6.0" />
+          <element id="library" level="project" name="Maven: stax:stax-api:1.0.1" />
         </element>
       </element>
     </root>
