@@ -46,7 +46,7 @@ public class CreatePivotTable {
         //Configure the pivot table
         //Use first column as row label
         pivotTable.addRowLabel(0);
-        //pivotTable.addRowLabel(3);
+        pivotTable.addRowLabel(3);
         //pivotTable.addDataColumn(0, false);
         //pivotTable.addRowLabel(1);
         //pivotTable.addRowLabel(2);
@@ -55,7 +55,7 @@ public class CreatePivotTable {
         //pivotTable.addDataColumn(1, true);
         //pivotTable.addDataColumn(1, true);
         //Sum up the second column
-        //pivotTable.addColumnLabel(DataConsolidateFunction.SUM, 1);
+        pivotTable.addColumnLabel(DataConsolidateFunction.SUM, 1);
         //Set the third column as filter
         //pivotTable.addColumnLabel(DataConsolidateFunction.AVERAGE, 2);
         //Add filter on forth column
@@ -64,6 +64,7 @@ public class CreatePivotTable {
         //pivotTable.addReportFilter(0);
         //pivotTable.addRowLabel(0);
         //pivotTable.addColumnLabel(DataConsolidateFunction.SUM, 1);
+        System.out.println(pivotTable.getRowLabelColumns());
         FileOutputStream fileOut = new FileOutputStream("ooxml-pivottable.xlsx");
         wb.write(fileOut);
         fileOut.close();
